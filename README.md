@@ -154,6 +154,25 @@ GitHub: https://github.com/Arun912003
 
 LinkedIn: https://linkedin.com/in/arun
 
+## 🖥️ Frontend
+A minimal HTML/JavaScript frontend is included in the repository for local testing and demonstration of the backend APIs.
+
+Note:
+- The frontend is intentionally lightweight and framework-free.
+- Live frontend deployment is optional for this backend-focused assessment.
+- Core evaluation is based on API functionality and responses.
+
+---
+
+## 🔐 Admin Panel
+The application includes Django Admin for internal data management (profiles and projects).
+
+Note:
+- Admin access is intended for development and maintenance purposes only.
+- Admin credentials are environment-specific and are not shared publicly.
+- Assessment evaluation focuses on REST API functionality, not admin authentication.
+
+
 🏁 Final Notes
 
 This project is designed to be simple, readable, and assessment-focused, demonstrating backend fundamentals, API design, and real-world debugging.
