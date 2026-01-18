@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Me API Playground</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    button {
+      padding: 8px 12px;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    input {
+      padding: 6px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Me API Playground</h1>
+
+  <!-- PROFILE -->
+  <h2>My Profile</h2>
+  <button onclick="loadProfile()">Load Profile</button>
+  <pre id="profile"></pre>
+
+  <hr>
+
+  <!-- SKILL SEARCH -->
+  <h2>Search Projects by Skill</h2>
+  <input type="text" id="skill" placeholder="Enter skill (e.g. Python)">
+  <button onclick="searchProjects()">Search</button>
+  <pre id="projects"></pre>
+
+  <script>
+    const BASE_URL = "http://127.0.0.1:8000/api";
+
+    function loadProfile() {
+      fetch(`${BASE_URL}/profile/`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("profile").innerText =
+            JSON.stringify(data, null, 2);
+        })
+        .catch(err => alert("Error loading profile"));
+    }
+
+    function searchProjects() {
+      const skill = document.getElementById("skill").value;
+      fetch(`${BASE_URL}/projects?skill=${skill}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("projects").innerText =
+            JSON.stringify(data, null, 2);
+        })
+        .catch(err => alert("Error searching projects"));
+    }
+  </script>
+
+</body>
+</html>
